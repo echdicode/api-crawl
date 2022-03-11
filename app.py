@@ -14,7 +14,7 @@ def verify():
     soup = BeautifulSoup(web_page, "html.parser")
     test = soup.findAll(class_='knswli need-get-value-facebook clearfix')
     links = [link.find('a').attrs["href"] for link in test]
-    return jsonify(str(links))
+    return jsonify(links)
 def log(message):  # simple wrapper for logging to stdout on heroku
     print(message)
     sys.stdout.flush()
